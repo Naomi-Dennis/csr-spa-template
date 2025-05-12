@@ -9,6 +9,7 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import { initializeApp } from "firebase/app";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -24,6 +25,12 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const app = initializeApp({
+    projectId: "web-page-sandbox",
+    apiKey: "AIzaSyD64RySfQMFke7aG_v2A-ApCIN95P0jd18",
+    authDomain: "web-page-sandbox.firebaseapp.com",
+  });
+
   return (
     <html lang="en">
       <head>
