@@ -7,7 +7,8 @@
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
-    "build:all": "npm run build --prefix ./functions && react-router build"
+    "build:all": "npm run build --prefix ./functions && react-router build",
+    "emulators:start": "npm run build:all && firebase emulators:start --only functions,hosting"
   },
   "dependencies": {
     "@react-router/fs-routes": "^7.6.0",

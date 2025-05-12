@@ -10,6 +10,7 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import { initializeApp } from "firebase/app";
+import { connectFunctionsEmulator, getFunctions } from "firebase/functions";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -30,6 +31,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
     apiKey: "AIzaSyD64RySfQMFke7aG_v2A-ApCIN95P0jd18",
     authDomain: "web-page-sandbox.firebaseapp.com",
   });
+
+  // const functions = getFunctions(app);
+  // connectFunctionsEmulator(functions, "localhost", 4450);
 
   return (
     <html lang="en">
